@@ -1,5 +1,6 @@
 import random
 
+
 print('Este programa genera una matriz NxN')
 #init nmatriz
 nmatrix = 0
@@ -22,14 +23,19 @@ def isinstance(s):
 #enter N value method
 def enterN():
         nmatrix = input('ingrese el valor de N: ')
+        print(nmatrix)
+
+#create aleatory number (row and col)
+row = []
+column = []
+
+for i in range(nmatrix):  
+    row[i] = random.randint(0, 9)
+    column[i] = random.randint(0, 9)
 
 
-#voy por aqui.....
-        if nmatrix is not int:
-            print('N debe ser un número entero')
-        else:
-            if nmatrix == 0:
-                print('N debe ser diferente de cero(0)')
+if nmatrix == 0:
+     print('N debe ser diferente de cero(0)')
 
 
     
