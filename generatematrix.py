@@ -4,12 +4,11 @@ import random
 print('Este programa genera una matriz NxN')
 #init variable
 nmatrix = 0 #Is the N value
-row = []
-column = []
-addrow = 0
-addcol = 0
 enter = True # while cicle control
 matrix=[]
+row=[]
+col=[]
+
 def genereNxN(n):#genere matrx NxN function
     for i in range(n):
         matrix.append([])
@@ -22,24 +21,37 @@ def printmatrix(n):#show matrix in screen
         print(i)
     
 
-def addrowmatrix(matrix):#add row of matrix
+def addrowmatrix(matrix,row):#add col of matrix and create row[]list
     addrow = 0
-    row= []
+    j = 0
     for i in matrix:
        addrow = sum(i)
        row.append([])
-       print (row)
+       row[j].append(addrow)
+       j = j +1
+    return row
+   
+    
        
-       
-# sumaFilas = lambda matriz: [sum(i) for i in matriz]
+def addcolwmatrix(matrix,col):#add col of matrix and create col[]list
+    addcol = 0
+    j = 0
+    for i in zip(*matrix):
+       addcol = sum(i)
+       col.append([])
+       col[j].append(addcol)
+       j = j +1
+    return col
 
-# sumaColumnas = lambda matriz: [sum(i) for i in zip(*matriz)]
-
-# def addcolmatrix(n):#add col of matrix
-#      for i in matrix:
-#         addcol = addcol + i 
-
-        
+def printrow_col(row,col):#show matrix in screen
+    print("La suma de las filas son:")
+    for i in row:
+        print(i)
+    print("La suma de las columnas son:")
+    for i in col:
+        print(i)
+    
+           
 #control enter N value method
 
 while enter:
@@ -57,9 +69,8 @@ while enter:
 
 genereNxN(nmatrix)#call function "Generate matrix NxN"
 printmatrix(matrix)#call function "Print matrix NxN"
-addrowmatrix(matrix)#call function "add row matrix NxN"
-
-                    #call function "add col matrix NxN"
-                    #call function "printaddmatrix"
+addrowmatrix(matrix,row)#call function "add row matrix NxN"
+addcolwmatrix(matrix,col)#call function "add col matrix NxN"
+printrow_col(row,col)#call function "print row and col"
 
     
