@@ -1,5 +1,4 @@
-﻿# Proyecto final Python IBM Skill
-# Proyecto final curso Python Full Stack :desktop_computer:
+﻿# Proyecto final curso Python Full Stack :desktop_computer:
 
 ## Tabla de contenido :label: :closed_book:
 1. [Información general](#Información-general)
