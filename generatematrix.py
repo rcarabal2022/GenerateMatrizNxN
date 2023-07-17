@@ -1,27 +1,45 @@
 import random
 
-
-print('Este programa genera una matriz NxN')
+print("------------------------------------------------------------------")
+print('| Este programa genera una matriz NxN y suma sus filas y columnas|')
+print("------------------------------------------------------------------\n")
 #init variable
-nmatrix = 0 #Is the N value
+
 enter = True # while cicle control
+nmatrix = 0#Is the N value
 matrix=[]
 row=[]
 col=[]
 
+
+def enterN(enter,nmatrix):#control enter N value method
+      while enter:
+    #except index error for validate int value
+        try:
+         nmatrix = int(input('Ingrese el valor de N: '))
+        except ValueError:
+            print("Debes escribir un número.")
+            continue
+  
+        if nmatrix == 0:
+            print ('N debe ser diferente de cero')
+        else:
+            enter = False
+      return nmatrix
+
 def genereNxN(n):#genere matrx NxN function
-    for i in range(n):
+      for i in range(n):
         matrix.append([])
         for j in range(n):
             matrix[i].append(random.randint(0, 9))#add aleatory numbers
     
 def printmatrix(n):#show matrix in screen
     print("Los valores de la matriz son:")
-    for i in matrix:
+    for i in n:
         print(i)
     
 
-def addrowmatrix(matrix,row):#add col of matrix and create row[]list
+def addrowmatrix(matrix,row):#add row of matrix and create row[]list
     addrow = 0
     j = 0
     for i in matrix:
@@ -51,22 +69,8 @@ def printrow_col(row,col):#show matrix in screen
     for i in col:
         print(i)
     
-           
-#control enter N value method
-
-while enter:
-    #except index error for validate int value
-    try:
-        nmatrix = int(input('Ingrese el valor de N: '))
-    except ValueError:
-        print("Debes escribir un número.")
-        continue
-  
-    if nmatrix == 0:
-        print ('N debe ser diferente de cero')
-    else:
-        enter = False
-
+ 
+nmatrix = enterN(enter,nmatrix)#call function "enter N"
 genereNxN(nmatrix)#call function "Generate matrix NxN"
 printmatrix(matrix)#call function "Print matrix NxN"
 addrowmatrix(matrix,row)#call function "add row matrix NxN"
