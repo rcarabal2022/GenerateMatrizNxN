@@ -39,7 +39,7 @@ def printmatrix(n):#show matrix in screen
         print(i)
     
 
-def addrowmatrix(matrix,row):#add col of matrix and create row[]list
+def addrowmatrix(matrix,row):#add row of matrix and create row[]list
     addrow = 0
     j = 0
     for i in matrix:
